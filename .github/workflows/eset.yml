@@ -125,7 +125,9 @@ jobs:
           $KEY="${{ github.event.inputs.key }}"
           $MAIL="${{ github.event.inputs.mail }}"
           $KEY_TYPE="${{ github.event.inputs.key_type }}"
-
+          $env:GIT_SSH_COMMAND=ssh -o BatchMode=yes
+          $env:GIT_TERMINAL_PROMPT=1
+          
           git clone https://github.com/Bob-six/ESET-KeyGen.git
           cd ESET-KeyGen
 
